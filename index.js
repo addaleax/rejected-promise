@@ -3,8 +3,8 @@
 function noop() {}
 
 class RejectedPromise extends Promise {
-  constructor(...args) {
-    super(...args);
+  constructor(executor) {
+    super(executor);
 
     this.catch(noop);
   }
