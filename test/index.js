@@ -3,7 +3,7 @@
 const util = require('util');
 const Debug = require('vm').runInDebugContext('Debug');
 
-// Roll inspection hacks so that we rejections aren’t accidentally handled.
+// Roll inspection hacks so that rejections aren’t accidentally handled.
 Promise.prototype.shouldEqual = function(v) {
   return new Promise((resolve, reject) => setImmediate(() => {
     const m = Debug.MakeMirror(this);
